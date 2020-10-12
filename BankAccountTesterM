@@ -1,0 +1,78 @@
+import java.util.Scanner;
+//Created the public class
+public class BankAccountTester {
+//Create a method
+ public static void main(String[] args) {
+	 
+// Scanner in to accept input from user
+ Scanner in = new Scanner(System.in);
+//Declare some Variables
+ int userChoice;
+ boolean quit = false;
+// Opened bank account with  1000$
+ double interestPct=0.05;
+ double withdraw=0;
+ double amount=0;
+ double deposit=0;
+ double balance=1000;
+ balance= balance+deposit+interestPct-withdraw;
+ 
+       do {
+// Give user choice to select Deposit, withdraw,balance, interestPct or exit.
+System.out.println("Select (1) to make a deposit");
+System.out.println("Select (2) to make a withdraw");
+System.out.println("Select (3) to check your balance");
+System.out.println("Select (4) to check you Percentage interest");
+System.out.print("Your choice, (0) to quit: ");
+userChoice = in.nextInt();
+//Establish some condition
+
+switch (userChoice) {
+case 1:
+
+
+System.out.print("Amount to deposit: ");
+deposit = in.nextDouble();
+if (deposit <= 0)
+System.out.println("Insuficient fund,Please make another deposit.");
+else {
+                             balance += deposit;
+System.out.println("$" + deposit + " has been deposited.");
+                        }
+break;
+case 2:
+System.out.print("Amount to withdraw: ");
+withdraw = in.nextDouble();
+if (balance <= 0 || withdraw > balance)
+System.out.println("insufficient fund, please make a deposit.");
+else {
+
+System.out.println("$" + (amount=balance-amount) + " is your new balance.");
+
+                        }
+break;
+case 3:
+System.out.println("Your balance: $" + (balance=deposit-withdraw+balance));
+balance= in.nextDouble();
+
+
+
+break;
+case 4:
+System.out.println("Your Percentage interest : $ " + (balance*interestPct));
+interestPct= in.nextDouble();
+
+break;
+case 0:
+quit = true;
+break;
+default:
+System.out.println("Wrong choice.");
+break;
+                  }
+System.out.println();
+} while (!quit);
+System.out.println("Have a great day!");
+      }
+}
+
