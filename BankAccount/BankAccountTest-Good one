@@ -1,0 +1,55 @@
+//Stinson Bank Account Tester
+import java.util.Scanner;
+
+public class BankAccountTester
+{
+	public BankAccountTester(double i) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args)
+	{
+		
+		Scanner abc = new Scanner(System.in);
+		
+		System.out.println("Enter an amount to open your account");
+		
+		double newAmount=abc.nextDouble();
+		
+		System.out.println("Enter an amount for your deposit");
+		
+		double newDeposit=abc.nextDouble();
+		
+		System.out.println("Enter an amount to withdraw");
+		
+		double newWithdraw= abc.nextDouble();
+		
+		System.out.println("Enter your percentage interest");
+		
+		double interest=abc.nextDouble();
+		
+		BankAccount myBank= new BankAccount(interest,newAmount);
+		
+		myBank.amount(newAmount);
+		
+		System.out.println(newAmount);
+		
+		myBank.addInterest();
+		
+		System.out.println(interest);
+		
+		myBank.withdraw(newWithdraw);
+		
+		System.out.println(newWithdraw);
+		
+		myBank.deposit(newDeposit);
+		
+		System.out.println(newDeposit);
+		
+		System.out.println("Your new balance" +myBank.getBalance());
+		
+		
+			
+		
+		}
+	}
