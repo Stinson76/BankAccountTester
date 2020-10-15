@@ -1,99 +1,55 @@
+//Stinson Bank Account Tester
 import java.util.Scanner;
-//Created the public class
-public class BankAccountTester {
-//Create a method
- public static void main(String[] args) {
-// Scanner in to accept input from user
- Scanner in = new Scanner(System.in);
-//Declare some Variables
- int userChoice;
 
- boolean quit = false;
-// Opened bank account with  1000$
- double balance = 1000;
-       do {
-// Give user choice to input a choice among Deposit, withdraw,balance or exit.
-System.out.println("Select (1) to make a deposit");
+public class BankAccountTester
+{
+	public BankAccountTester(double i) {
+		// TODO Auto-generated constructor stub
+	}
 
-System.out.println("Select (2) to make a withdraw");
-
-System.out.println("Select (3) to check your balance");
-
-System.out.print("Your choice, (0) to quit: ");
-
-userChoice = in.nextInt();
-//Establish some condition
-switch (userChoice) {
-
-case 1:
-	
-double interestPct=0.05;
-double amount;
-
-System.out.print("Amount to deposit: ");
-
-amount = in.nextDouble();
-
-if (amount <= 0)
-
-System.out.println("Insuficient fund,Please make a deposit.");
-
-else {
-
-                             balance += amount*interestPct;
-
-System.out.println("$" + amount + " has been deposited.");
-
-                        }
-
-break;
-
-case 2:
-
-System.out.print("Amount to withdraw: ");
-
-amount = in.nextDouble();
-
-if (amount <= 0 || amount > balance)
-
-System.out.println("insufficient fund, please make a deposit.");
-
-else {
-
-balance -= amount;
-
-System.out.println("$" + amount + " has been withdrawn.");
-
-                        }
-
-break;
-
-case 3:
-
-System.out.println("Your balance: $" + balance);
-
-break;
-
-case 0:
-
-quit = true;
-
-break;
-
-default:
-
-System.out.println("Wrong choice.");
-
-break;
-
-                  }
-
-System.out.println();
-
-} while (!quit);
-
-System.out.println("Have a great day!");
-
-      }
-
-}
+	public static void main(String[] args)
+	{
+		
+		Scanner abc = new Scanner(System.in);
+		
+		System.out.println("Enter an amount to open your account");
+		
+		double newAmount=abc.nextDouble();
+		
+		System.out.println("Enter an amount for your deposit");
+		
+		double newDeposit=abc.nextDouble();
+		
+		System.out.println("Enter an amount to withdraw");
+		
+		double newWithdraw= abc.nextDouble();
+		
+		System.out.println("Enter your percentage interest");
+		
+		double interest=abc.nextDouble();
+		
+		BankAccount myBank= new BankAccount(interest,newAmount);
+		
+		myBank.amount(newAmount);
+		
+		System.out.println(newAmount);
+		
+		myBank.addInterest();
+		
+		System.out.println(interest);
+		
+		myBank.withdraw(newWithdraw);
+		
+		System.out.println(newWithdraw);
+		
+		myBank.deposit(newDeposit);
+		
+		System.out.println(newDeposit);
+		
+		System.out.println("Your new balance" +myBank.getBalance());
+		
+		
+			
+		
+		}
+	}
