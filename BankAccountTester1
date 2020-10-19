@@ -1,0 +1,38 @@
+//Cedestinson Ductan
+import java.util.Scanner;
+public class BankAccountTest {
+	double amount;
+    double deposit;
+	double withdraw;
+	static double balance;
+	static double interest;
+	public static void main(String[] args) {
+		 Scanner myObj = new Scanner(System.in);
+		System.out.println("Please enter an amount to start your account");
+		double amount= myObj.nextDouble();
+		System.out.println("Please enter a deposit amount");
+		double deposit= myObj.nextDouble();
+		System.out.println("Please enter an amount to withdraw");
+		double withdraw= myObj.nextDouble();
+		System.out.println("Please enter your interest percentage");
+		double interest= myObj.nextDouble();
+		
+		 
+		BankAccountTest myBankAccount =  new BankAccountTest();
+		myBankAccount.interest= (balance*interest);
+		 myBankAccount.balance= ((amount+deposit)-withdraw);
+	     System.out.println("Your balance is :" +balance);
+			
+		
+		
+		
+		
+		
+	
+	
+		
+		
+	}
+	
+}
+
